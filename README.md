@@ -4,7 +4,7 @@
 - [Container Registry (OCIR)](#container-registry-ocir)
 - [Functions](#functions)
 - [API Gateway](#api-gateway)
-- Kubernetes 
+- [Kubernetes](#kubernetes) 
 
 ## Resource Manager
 
@@ -99,3 +99,22 @@ Documentação: https://docs.oracle.com/en-us/iaas/Content/APIGateway/home.htm
 2. No gateway já criado, criar um novo deployment
 
 3. Configurar o deployment para ter um path apontando para a function criada no passo anterior
+
+## Kubernetes
+ O Oracle Cloud Infrastructure Container Engine for Kubernetes (OKE) é um serviço de Kubernetes totalmente gerenciado, escalável e altamente disponível que você pode usar para implantar seus aplicativos de contêineres na nuvem. 
+ Um dos grande destaques do serviço é ele não possuir nenhuma customização pré-instalada, fazendo com que o cluster seja compatível com qualquer implementação homologada de Kubernetes. Outro fator importante é a capacidade do serviço ser provisionado nos mais variados tipos de instância, sejam elas Bare Metal, VMs, Instâncias que possuem GPU, ou processadores ARM por exemplo.
+
+ Caracteristicas da plataforma:
+ - S.O dos worker nodes são baseados em Oracle Linux (Distro baseada em CentOS), podendo este ser personalizado.
+ - Suporte a consumo de serviços nativos de nuvem, como Load Balancer, Armazenamento (Persistent volume claims) de forma nativa
+ - Suporte a extensão de serviços (Custom Resource Definition) como Object Storages, ou Bases de Dados de Plataforma (Autonomous Databases, MySQL as a Service)
+ - Suporte a autoscaling 
+
+ Documentação: https://docs.oracle.com/pt-br/iaas/Content/ContEng/home.htm
+
+ ### Demonstração
+
+1. Navegar até o Serviço de OKE criado pelo Resource Manager: Developer Services -> Containers & Artifacts -> Kubernetes Clusters (OKE)
+2. No cluster já criado, acessar utilizando via cloud shell
+3. Aplicar o manifesto de demonstração, que criará um deployment nginx juntamente com um service type Load Balancer utilizando o guide presente na documentação: https://docs.oracle.com/pt-br/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#Creating_Load_Balancers_to_Distribute_Traffic_Between_Cluster_Nodes
+4. Validar a implementação acessando o IP público do LoadBalancer na porta 80: (Utilize o comando ´´´kubectl get svc´´´ para listar os serviços disponíveis)

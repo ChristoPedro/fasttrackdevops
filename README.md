@@ -57,4 +57,13 @@ As funções pode ser invocadas através de:
 - fn-cli (Linha de comando do Fn Project)
 - Rest API
 - oci-cli
+- SDK do OCI
+
+Documentação: https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm
+
+### Demonstração
+
+1. Navegar até a aplicação que foi criada através do Resource Manager: Developer Services -> Functions -> Application
+
+2. Entre na aplicação criada pelo Resource Manager e siga o quick start, para criar uma função na aplicação, utilizando o cloud shell.
 

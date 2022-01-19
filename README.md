@@ -117,4 +117,4 @@ Documentação: https://docs.oracle.com/en-us/iaas/Content/APIGateway/home.htm
 1. Navegar até o Serviço de OKE criado pelo Resource Manager: Developer Services -> Containers & Artifacts -> Kubernetes Clusters (OKE)
 2. No cluster já criado, acessar utilizando via cloud shell
 3. Aplicar o manifesto de demonstração, que criará um deployment nginx juntamente com um service type Load Balancer utilizando o guide presente na documentação: https://docs.oracle.com/pt-br/iaas/Content/ContEng/Tasks/contengcreatingloadbalancer.htm#Creating_Load_Balancers_to_Distribute_Traffic_Between_Cluster_Nodes
-4. Validar a implementação acessando o IP público do LoadBalancer na porta 80: (Utilize o comando ´´´kubectl get svc´´´ para listar os serviços disponíveis)
+4. Validar a implementação acessando o IP público do LoadBalancer na porta 80: (Utilize o comando ´´´ kubectl get svc ´´´ para listar os serviços disponíveis)

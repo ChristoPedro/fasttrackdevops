@@ -3,7 +3,7 @@
 - [Resource Manager](#Resource-Manager)
 - [Container Registry (OCIR)](#container-registry-ocir)
 - [Functions](#functions)
-- API Gateway
+- [API Gateway](#api-gateway)
 - Kubernetes 
 
 ## Resource Manager
@@ -38,6 +38,12 @@ No repositório também pode ser ativada a função de escanear vulnerabilidades
 
 Documentação: https://docs.oracle.com/en-us/iaas/Content/Registry/home.htm
 
+### Demonstração
+
+1. Navegue até o OCIR: Developer Service -> Container & Artifacts -> Container Registry.
+
+2. No compartimento criado pelo Resource Manager, crie um novo repositório.
+
 ## Functions
 
 Serviço gerenciado de função como serviço no modelo serveless. Baseado no [Fn Project](https://fnproject.io/), que cria funções baseadas em containers.
@@ -67,3 +73,29 @@ Documentação: https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm
 
 2. Entre na aplicação criada pelo Resource Manager e siga o **Getting Started**, para criar uma função na aplicação, utilizando o cloud shell.
 
+## API Gateway
+
+API Gateway é a ferramenta que permite expor seus endpoints que estão em redes privadas na internet. O serviço permite adicionar validação, transformação de request e response, CORS, autenticação e autorização e limite de chamadas.
+
+Aceita como backend para as rotas:
+
+- HTTP
+- Functions
+- Stock Response
+
+Pode ser configuradas autenticação:
+
+- JWT
+- Custon (utilizando Functions)
+
+Permite trazer o próprio TLS e habilitar autorização do tipo mTLS.
+
+Documentação: https://docs.oracle.com/en-us/iaas/Content/APIGateway/home.htm
+
+### Demonstração
+
+1. Navegar até o API Gateway criado pelo Resource Manager: Developer Services -> API Management -> Gateways
+
+2. No gateway já criado, criar um novo deployment
+
+3. Configurar o deployment para ter um path apontando para a function criada no passo anterior

@@ -1,7 +1,7 @@
 # OCI Fast Track DevOps
 
 - [Resource Manager](#Resource-Manager)
-- [Container Registry (OCIR)](#Container-Registry-(OCIR))
+- [Container Registry (OCIR)](#container-registry-ocir)
 - Functions
 - API Gateway
 - Kubernetes 

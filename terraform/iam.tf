@@ -13,15 +13,33 @@ resource "oci_identity_dynamic_group" "devops_dynamic_group" {
     name = local.dg_name
 }
 
+resource "oci_identity_policy" "devops_policy" {
+    compartment_id = oci_identity_compartment.devops_compartment.id
+    description = "Policy para as ferramentas de DevOps"
+    name = "DevOps_Policy"
+    statements = local.oci_policies_compartment
+}
+
+resource "oci_identity_policy" "scanning_image_policy" {
+    compartment_id = var.tenancy_ocid
+    description = "Policy para habilitar o scan de vulnerabilidade do OCIR"
+    name = "Scanning_Image_Policy"
+    statements = local.oci_policies_tenancy
+}
+
 locals {
 
     compartment_name = "DevOps"
     compartment_ocid = oci_identity_compartment.devops_compartment.id
     dg_name = "DevOpsDG"
 
-    oci_grafana_logs_statements = [
-        "Allow dynamic-group ${local.dg_name} to mange all-resources in compartment ${local.compartment_name}",
-        "ALLOW any-user to use functions-family in compartment ${local.compartment_name} where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '${local.compartment_ocid}'}"
+    oci_policies_compartment = [
+        "Allow any-user to use functions-family in compartment ${local.compartment_name} where ALL {request.principal.type= 'ApiGateway', request.resource.compartment.id = '${oci_identity_compartment.devops_compartment.id}'}",
+        "Allow dynamic-group ${local.dg_name} to manage all-resources in compartment ${local.compartment_name}"
+    ]
+
+    oci_policies_tenancy = [
+        "Allow service vulnerability-scanning-service to read repos in tenancy"
     ]
 
 }

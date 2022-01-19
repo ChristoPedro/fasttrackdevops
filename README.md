@@ -65,5 +65,5 @@ Documentação: https://docs.oracle.com/en-us/iaas/Content/Functions/home.htm
 
 1. Navegar até a aplicação que foi criada através do Resource Manager: Developer Services -> Functions -> Application
 
-2. Entre na aplicação criada pelo Resource Manager e siga o quick start, para criar uma função na aplicação, utilizando o cloud shell.
+2. Entre na aplicação criada pelo Resource Manager e siga o **Getting Started**, para criar uma função na aplicação, utilizando o cloud shell.
 

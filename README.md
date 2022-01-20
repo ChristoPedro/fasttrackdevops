@@ -1,4 +1,4 @@
-# OCI Fast Track DevOps
+# DevApp
 
 - [Resource Manager](#Resource-Manager)
 - [Container Registry (OCIR)](#container-registry-ocir)

@@ -116,7 +116,7 @@ Documentação: https://docs.oracle.com/en-us/iaas/Content/APIGateway/home.htm
 
 1. Navegar até o Serviço de OKE criado pelo Resource Manager: Developer Services -> Containers & Artifacts -> Kubernetes Clusters (OKE)
 2. No cluster já criado, acessar utilizando via cloud shell
-3. Crie um novo arquivo no cloud shell chamado nginx_lb.yaml e copie o conteúdo do arquivo [nginx_lb.yaml](./nginx.yaml) presente nesse repositório
+3. Crie um novo arquivo no cloud shell chamado nginx_lb.yaml e copie o conteúdo do arquivo [nginx_lb.yaml](nginx_lb.yaml) presente nesse repositório
 4. Para criar a implantação e o serviço definidos em nginx_lb.yaml enquanto estiver conectado ao cluster do Kubernetes, digite o comando:
 ``` kubectl apply -f nginx_lb.yaml ```
 5. O balanceador de carga pode levar alguns minutos para passar do estado pendente para totalmente operacional. Você pode exibir o estado atual do cluster digitando:
